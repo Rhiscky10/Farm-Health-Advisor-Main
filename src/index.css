@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 90 20% 97%;
+    --foreground: 150 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 10%;
+
+    --primary: 142 52% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 90 30% 92%;
+    --secondary-foreground: 150 30% 15%;
+
+    --muted: 90 15% 93%;
+    --muted-foreground: 150 10% 45%;
+
+    --accent: 36 80% 55%;
+    --accent-foreground: 36 80% 15%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 15% 88%;
+    --input: 120 15% 88%;
+    --ring: 142 52% 36%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 90 20% 97%;
+    --sidebar-foreground: 150 30% 10%;
+    --sidebar-primary: 142 52% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 90 30% 92%;
+    --sidebar-accent-foreground: 150 30% 15%;
+    --sidebar-border: 120 15% 88%;
+    --sidebar-ring: 142 52% 36%;
+
+    /* Custom AgriScan tokens */
+    --agri-leaf: 142 52% 36%;
+    --agri-earth: 30 40% 35%;
+    --agri-sky: 200 70% 55%;
+    --agri-sun: 45 95% 55%;
+    --agri-warning: 36 80% 55%;
+    --agri-danger: 0 72% 51%;
+    --agri-success: 142 72% 42%;
+    --agri-glow: 142 52% 36%;
+
+    --severity-mild: 142 72% 42%;
+    --severity-moderate: 45 95% 55%;
+    --severity-severe: 25 90% 50%;
+    --severity-critical: 0 72% 51%;
+  }
+
+  .dark {
+    --background: 150 20% 6%;
+    --foreground: 90 20% 95%;
+
+    --card: 150 20% 9%;
+    --card-foreground: 90 20% 95%;
+
+    --popover: 150 20% 9%;
+    --popover-foreground: 90 20% 95%;
+
+    --primary: 142 52% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 150 15% 15%;
+    --secondary-foreground: 90 20% 90%;
+
+    --muted: 150 15% 15%;
+    --muted-foreground: 90 10% 60%;
+
+    --accent: 36 80% 55%;
+    --accent-foreground: 36 80% 95%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 15% 18%;
+    --input: 150 15% 18%;
+    --ring: 142 52% 45%;
+
+    --sidebar-background: 150 20% 6%;
+    --sidebar-foreground: 90 20% 95%;
+    --sidebar-primary: 142 52% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 15% 15%;
+    --sidebar-accent-foreground: 90 20% 90%;
+    --sidebar-border: 150 15% 18%;
+    --sidebar-ring: 142 52% 45%;
+
+    --agri-leaf: 142 52% 45%;
+    --agri-earth: 30 30% 50%;
+    --agri-sky: 200 60% 55%;
+    --agri-sun: 45 90% 55%;
+    --agri-glow: 142 52% 45%;
+
+    --severity-mild: 142 72% 50%;
+    --severity-moderate: 45 90% 55%;
+    --severity-severe: 25 85% 55%;
+    --severity-critical: 0 65% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--agri-sky)));
+  }
+
+  .bg-gradient-hero {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.08) 0%,
+      hsl(var(--agri-sun) / 0.05) 50%,
+      hsl(var(--agri-sky) / 0.05) 100%
+    );
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 shadow-lg;
+  }
+
+  .scan-line {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      hsl(var(--primary) / 0.4) 50%,
+      transparent 100%
+    );
+  }
+}
